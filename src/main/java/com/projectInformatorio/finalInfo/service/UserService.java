@@ -48,7 +48,9 @@ public class UserService {
         return (ArrayList<User>) userRepository.findByCreationDateIsAfter(date);
     }
 
-
+    public User get(Long id) {
+        return userRepository.findById(id).get();
+    }
 
 }
 

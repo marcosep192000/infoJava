@@ -60,5 +60,22 @@ public class UserController {
         user.addPost(post);
         return new ResponseEntity<>(postRepository.save(post), HttpStatus.CREATED);
     }
+
+
+    @PutMapping("editar/{id}")
+    public ResponseEntity<?> update(@Validated @RequestBody User user, @PathVariable Long id) {
+        try {
+            User ex = userService.get(id);
+            user.setId(id);
+            userRepository.save(user);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+
+
 }
 
