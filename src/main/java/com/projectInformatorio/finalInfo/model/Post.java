@@ -19,7 +19,7 @@ public class Post {
     @JoinColumn(name = "id_autor", nullable = false)
     User user;
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "post" ,cascade = CascadeType.ALL)
     private List<Coment> coment= new ArrayList<>();
 
     private final LocalDate creationDate = LocalDate.now();

@@ -13,7 +13,7 @@ public class Coment{
     private final LocalDate creationDate = LocalDate.now();
     private  String Coment ;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_post", nullable = false)
     private
     Post post;

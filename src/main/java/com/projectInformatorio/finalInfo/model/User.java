@@ -34,7 +34,7 @@ public class User {
     @Size(max=50)
     private String country;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
     private List<Post> post= new ArrayList<>();
 
 

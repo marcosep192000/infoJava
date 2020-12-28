@@ -36,8 +36,8 @@ public class UserService {
 
     }
 
-    public void eliminarUsuario(Long id) {
-        userRepository.deleteById(id);
+    public void  eliminarUsuario(Long id) {
+     userRepository.deleteById(id);
     }
 
     public ArrayList<User> obtenerPorCiudad(String city) {

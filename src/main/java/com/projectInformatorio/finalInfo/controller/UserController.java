@@ -39,9 +39,9 @@ public class UserController {
         return new ResponseEntity<>(userService.list(),HttpStatus.CREATED);
     }
 
+
     @DeleteMapping("eliminar/{id}")
-    public void delete(@PathVariable Long id) {
-        userService.eliminarUsuario(id);
+    public void  delete(@PathVariable Long id) { userService.eliminarUsuario(id);
     }
     @GetMapping("/query")
     public ArrayList<User> obtenerUsuarioPorCiudad(@RequestParam("state") String ciudad){
